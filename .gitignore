@@ -1,20 +1,27 @@
-﻿# Entorno virtual
+﻿# Entornos virtuales
 .venv/
 venv/
 
-# Modelos entrenados pesados
+# Modelos entrenados y comprimidos
 models_pkl/
+models_pkl.zip
+
+# Dependencias y compilación del frontend
+frontend/node_modules/
+frontend/dist/
 
 # Archivos temporales de Python
 __pycache__/
 *.pyc
 *.pyo
 
+# Variables privadas
+.env
+.env.local
+
 # Jupyter
 .ipynb_checkpoints/
 
-# Archivos del sistema
+# Sistema
 .DS_Store
 Thumbs.db
-
-Add-Content .gitignore "`nmodels_pkl.zip"
