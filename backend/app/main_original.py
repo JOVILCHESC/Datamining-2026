@@ -12,7 +12,6 @@ import sklearn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from app.temporal import router as temporal_router
 
 
 # ============================================================
@@ -43,8 +42,6 @@ app.add_middleware(
 
 DEBUG_ROTACION = True
 DEBUG_PRECIO = True
-
-app.include_router(temporal_router)
 
 
 # ============================================================
@@ -91,6 +88,7 @@ CAMPOS_NUMERICOS_CONOCIDOS = {
     "dormitorios",
     "sala_estar",
     "banios",
+    "numero_pisos",
     "anio_venta",
     "mes_venta",
     "trimestre_venta",
@@ -253,6 +251,7 @@ class PropiedadInput(BaseModel):
 
     # Se conserva en el formulario. Si un modelo no la espera,
     # preparar_entrada_modelo la ignora automáticamente.
+    numero_pisos: int = Field(..., ge=1)
 
     anio_construccion: int = Field(..., ge=1800)
 

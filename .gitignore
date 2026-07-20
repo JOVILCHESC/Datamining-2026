@@ -16,3 +16,5 @@ __pycache__/
 # Archivos del sistema
 .DS_Store
 Thumbs.db
+
+Add-Content .gitignore "`nmodels_pkl.zip"
